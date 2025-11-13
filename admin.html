@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Prototipe INTERAKTIF (v5 - LENGKAP)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .sidebar-bg {
+        background-color: #1f2937;
+      }
+      .sidebar-active {
+        background-color: #111827;
+      }
+      .content-page {
+        display: none;
+      }
+      .content-page.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex h-screen">
+      <aside class="w-64 sidebar-bg text-white p-4 flex flex-col">
+        <h1 class="text-xl font-bold mb-6">Admin Pempek Te'chi</h1>
+        <nav class="flex-1">
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#dashboard"
+                id="btn-dashboard"
+                class="nav-link block p-2 rounded sidebar-active"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a
+                href="#products"
+                id="btn-products"
+                class="nav-link block p-2 rounded hover:bg-gray-700"
+              >
+                Kelola Produk
+              </a>
+            </li>
+            <li>
+              <a
+                href="#transactions"
+                id="btn-transactions"
+                class="nav-link block p-2 rounded hover:bg-gray-700"
+              >
+                Input Transaksi
+              </a>
+            </li>
+            <li>
+              <a
+                href="#expenses"
+                id="btn-expenses"
+                class="nav-link block p-2 rounded hover:bg-gray-700"
+              >
+                Catat Pengeluaran
+              </a>
+            </li>
+            <li>
+              <a
+                href="#reports"
+                id="btn-reports"
+                class="nav-link block p-2 rounded hover:bg-gray-700"
+              >
+                Laporan Keuangan
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mt-auto">
+          <a href="#" class="block p-2 rounded hover:bg-gray-700"> Log Out </a>
+        </div>
+      </aside>
+
+      <main class="flex-1 p-8 overflow-y-auto">
+        <div id="page-dashboard" class="content-page active">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Dashboard</h2>
+            <div class="text-sm font-medium">lol123456</div>
+          </header>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div
+              class="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform"
+            >
+              <h3 class="text-sm font-medium text-gray-500">Total Produk</h3>
+              <p class="text-3xl font-semibold text-gray-900 mt-2">12</p>
+            </div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform"
+            >
+              <h3 class="text-sm font-medium text-gray-500">
+                Transaksi Hari Ini
+              </h3>
+              <p class="text-3xl font-semibold text-gray-900 mt-2">5</p>
+            </div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform"
+            >
+              <h3 class="text-sm font-medium text-gray-500">
+                Pendapatan Hari Ini
+              </h3>
+              <p class="text-3xl font-semibold text-gray-900 mt-2">Rp 75.000</p>
+            </div>
+          </div>
+          <div class="p-6 bg-white rounded-lg shadow-md mb-6">
+            <h3 class="text-lg font-semibold mb-4">Ringkasan Stok Saat Ini</h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Produk
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Stok
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Terakhir Diubah
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4">Pempek Kulit</td>
+                  <td class="px-6 py-4 font-bold">50</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">2 jam lalu</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4">Pempek Kapal Selam</td>
+                  <td class="px-6 py-4 font-bold">30</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">1 hari lalu</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">
+              Grafik Keuangan (Contoh 7 Hari Terakhir)
+            </h3>
+            <div class="flex justify-center">
+              <img
+                src="https://quickchart.io/chart?c=%7Btype%3A%27bar%27%2Cdata%3A%7Blabels%3A%5B%27Sen%27%2C%27Sel%27%2C%27Rab%27%2C%27Kam%27%2C%27Jum%27%2C%27Sab%27%2C%27Min%27%5D%2Cdatasets%3A%5B%7Blabel%3A%27Pemasukan%27%2Cdata%3A%5B50%2C60%2C30%2C80%2C70%2C90%2C50%5D%2CbackgroundColor%3A%27rgba(59%2C130%2C246%2C0.8)%27%7D%2C%7Blabel%3A%27Pengeluaran%27%2Cdata%3A%5B20%2C10%2C15%2C30%2C25%2C10%2C40%5D%2CbackgroundColor%3A%27rgba(248%2C113%2C113%2C0.8)%27%7D%5D%7D%2Coptions%3A%7Blegend%3A%7Bdisplay%3Atrue%2Cposition%3A%27bottom%27%7D%2Cscales%3A%7ByAxes%3A%5B%7Bticks%3A%7BbeginAtZero%3Atrue%7D%7D%5D%7D%7D%7D"
+                alt="Grafik Keuangan Mingguan"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div id="page-products" class="content-page">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Kelola Produk</h2>
+            <div class="text-sm font-medium">lol123456</div>
+          </header>
+          <div class="mb-4 flex justify-between">
+            <a
+              href="#"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              + Tambah Produk Baru
+            </a>
+            <a
+              href="#"
+              class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
+            >
+              ⚙️ Atur Jumlah Stok
+            </a>
+          </div>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Nama
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Harga
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Aksi
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4">Pempek Kulit</td>
+                  <td class="px-6 py-4">Rp 1.500</td>
+                  <td class="px-6 py-4">
+                    <a href="#" class="text-indigo-600">Edit</a> /
+                    <a href="#" class="text-red-600">Hapus</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4">Pempek Kapal Selam</td>
+                  <td class="px-6 py-4">Rp 15.000</td>
+                  <td class="px-6 py-4">
+                    <a href="#" class="text-indigo-600">Edit</a> /
+                    <a href="#" class="text-red-600">Hapus</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="page-transactions" class="content-page">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Input Transaksi</h2>
+            <div class="text-sm font-medium">lol123456</div>
+          </header>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">Formulir Penjualan Baru</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="mb-4">
+                <label
+                  for="product"
+                  class="block text-sm font-medium text-gray-700"
+                  >Produk</label
+                >
+                <select
+                  id="product"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                >
+                  <option>Pempek Kulit (Stok: 50)</option>
+                  <option>Pempek Kapal Selam (Stok: 30)</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="qty" class="block text-sm font-medium text-gray-700"
+                  >Jumlah</label
+                >
+                <input
+                  type="number"
+                  id="qty"
+                  value="1"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                />
+              </div>
+            </div>
+            <button
+              class="bg-gray-200 text-gray-700 py-2 px-4 rounded hover:bg-gray-300"
+            >
+              + Tambah ke Keranjang
+            </button>
+
+            <hr class="my-6" />
+            <h4 class="text-md font-semibold mb-2">Keranjang</h4>
+            <ul>
+              <li class="flex justify-between py-2 border-b">
+                <span>Pempek Kulit x 5</span>
+                <span>Rp 7.500</span>
+              </li>
+            </ul>
+            <div class="text-right font-bold text-xl mt-4">Total: Rp 7.500</div>
+            <button
+              class="mt-4 w-full bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded"
+            >
+              Simpan Transaksi
+            </button>
+          </div>
+        </div>
+
+        <div id="page-expenses" class="content-page">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Catat Pengeluaran</h2>
+            <div class="text-sm font-medium">lol123456</div>
+          </header>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">
+              Formulir Pengeluaran Baru
+            </h3>
+            <form>
+              <div class="mb-4">
+                <label
+                  for="expense_name"
+                  class="block text-sm font-medium text-gray-700"
+                  >Nama Pengeluaran</label
+                >
+                <input
+                  type="text"
+                  id="expense_name"
+                  placeholder="Contoh: Beli Stok Ikan"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="expense_amount"
+                  class="block text-sm font-medium text-gray-700"
+                  >Jumlah (Rp)</label
+                >
+                <input
+                  type="number"
+                  id="expense_amount"
+                  placeholder="Contoh: 200000"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="expense_date"
+                  class="block text-sm font-medium text-gray-700"
+                  >Tanggal</label
+                >
+                <input
+                  type="date"
+                  id="expense_date"
+                  value="2025-11-13"
+                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Simpan Pengeluaran
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="page-reports" class="content-page">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Laporan Keuangan</h2>
+            <div class="text-sm font-medium">lol123456</div>
+          </header>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Tanggal
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Keterangan
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Pemasukan
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Pengeluaran
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4">2025-11-13</td>
+                  <td class="px-6 py-4">Transaksi #1</td>
+                  <td class="px-6 py-4 text-green-600">+ Rp 75.000</td>
+                  <td class="px-6 py-4 text-red-600"></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4">2025-11-12</td>
+                  <td class="px-6 py-4">Beli Stok Ikan</td>
+                  <td class="px-6 py-4 text-green-600"></td>
+                  <td class="px-6 py-4 text-red-600">- Rp 200.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Mengatur tanggal hari ini di form pengeluaran
+      // (Perbaikan dari kode v3 agar lebih bersih)
+      document.getElementById("expense_date").valueAsDate = new Date();
+
+      // Ambil semua tombol dan halaman
+      const navLinks = document.querySelectorAll(".nav-link");
+      const pages = document.querySelectorAll(".content-page");
+
+      // Fungsi untuk mengatur link aktif
+      function setActiveLink(activeLink) {
+        navLinks.forEach((link) => {
+          link.classList.remove("sidebar-active");
+          link.classList.add("hover:bg-gray-700");
+        });
+        activeLink.classList.add("sidebar-active");
+        activeLink.classList.remove("hover:bg-gray-700");
+      }
+
+      // Fungsi untuk menampilkan halaman
+      function showPage(pageId) {
+        pages.forEach((page) => {
+          page.classList.remove("active");
+        });
+        document.getElementById(pageId).classList.add("active");
+      }
+
+      // Tambahkan event listener untuk setiap tombol
+      document
+        .getElementById("btn-dashboard")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          setActiveLink(e.currentTarget);
+          showPage("page-dashboard");
+        });
+
+      document.getElementById("btn-products").addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveLink(e.currentTarget);
+        showPage("page-products");
+      });
+
+      document
+        .getElementById("btn-transactions")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          setActiveLink(e.currentTarget);
+          showPage("page-transactions");
+        });
+
+      document.getElementById("btn-expenses").addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveLink(e.currentTarget);
+        showPage("page-expenses");
+      });
+
+      document.getElementById("btn-reports").addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveLink(e.currentTarget);
+        showPage("page-reports");
+      });
+    </script>
+  </body>
+</html>
