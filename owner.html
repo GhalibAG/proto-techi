@@ -1,229 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Owner Dashboard - Prototipe INTERAKTIF (v5 - LENGKAP)</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Dashboard - Prototipe INTERAKTIF (v6 - Switch Role)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .sidebar-bg { background-color: #1f2937; }
-        .sidebar-active { background-color: #111827; }
-        .content-page { display: none; }
-        .content-page.active { display: block; }
+      .sidebar-bg {
+        background-color: #1f2937;
+      }
+      .sidebar-active {
+        background-color: #111827;
+      }
+      .content-page {
+        display: none;
+      }
+      .content-page.active {
+        display: block;
+      }
     </style>
-</head>
-<body class="bg-gray-100">
+  </head>
+  <body class="bg-gray-100">
     <div class="flex h-screen">
-        
-        <aside class="w-64 sidebar-bg text-white p-4 flex flex-col">
-            <h1 class="text-xl font-bold mb-6">Owner Pempek Te'chi</h1>
-            <nav class="flex-1">
-                <ul class="space-y-2">
-                    <li>
-                        <a href="#dashboard" id="btn-dashboard" class="nav-link block p-2 rounded sidebar-active">
-                           Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#sales" id="btn-sales" class="nav-link block p-2 rounded hover:bg-gray-700">
-                           Laporan Penjualan
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#finance" id="btn-finance" class="nav-link block p-2 rounded hover:bg-gray-700">
-                           Laporan Keuangan
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#stock" id="btn-stock" class="nav-link block p-2 rounded hover:bg-gray-700">
-                           Lihat Stok Produk
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="mt-auto">
-                <a href="#" class="block p-2 rounded hover:bg-gray-700">
-                    Log Out
-                 </a>
+      <aside class="w-64 sidebar-bg text-white p-4 flex flex-col">
+        <h1 class="text-xl font-bold mb-6">Owner Pempek Te'chi</h1>
+        <nav class="flex-1">
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#dashboard"
+                id="btn-dashboard"
+                class="nav-link block p-2 rounded sidebar-active"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a
+                href="#sales"
+                id="btn-sales"
+                class="nav-link block p-2 rounded hover:bg-gray-700"
+              >
+                Laporan Penjualan
+              </a>
+            </li>
+            <li>
+              <a
+                href="#finance"
+                id="btn-finance"
+                class="nav-link block p-2 rounded hover:bg-gray-700"
+              >
+                Laporan Keuangan
+              </a>
+            </li>
+            <li>
+              <a
+                href="#stock"
+                id="btn-stock"
+                class="nav-link block p-2 rounded hover:bg-gray-700"
+              >
+                Lihat Stok Produk
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="mt-4 pt-4 border-t border-gray-700">
+          <span class="px-2 text-xs font-medium text-gray-400 uppercase"
+            >Demo Tools</span
+          >
+          <a
+            href="index.html"
+            class="block p-2 mt-2 rounded bg-indigo-500 text-white font-medium text-center hover:bg-indigo-400"
+          >
+            Switch to Admin
+          </a>
+        </div>
+        <div class="mt-auto pt-4 border-t border-gray-700">
+          <a href="#" class="block p-2 rounded hover:bg-gray-700"> Log Out </a>
+        </div>
+      </aside>
+
+      <main class="flex-1 p-8 overflow-y-auto">
+        <div id="page-dashboard" class="content-page active">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Selamat Datang, Owner!</h2>
+            <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
+          </header>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-sm font-medium text-gray-500">
+                Total Profit (Bulan Ini)
+              </h3>
+              <p class="text-3xl font-semibold text-gray-900 mt-2">
+                Rp 4.500.000
+              </p>
             </div>
-        </aside>
-
-        <main class="flex-1 p-8 overflow-y-auto">
-
-            <div id="page-dashboard" class="content-page active">
-                <header class="flex justify-between items-center mb-8">
-                    <h2 class="text-3xl font-bold">Selamat Datang, Owner!</h2>
-                    <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
-                </header>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-sm font-medium text-gray-500">Total Profit (Bulan Ini)</h3>
-                        <p class="text-3xl font-semibold text-gray-900 mt-2">Rp 4.500.000</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-sm font-medium text-gray-500">Produk Terlaris</h3>
-                        <p class="text-3xl font-semibold text-gray-900 mt-2">Kapal Selam</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-sm font-medium text-gray-500">Total Transaksi (Bulan Ini)</h3>
-                        <p class="text-3xl font-semibold text-gray-900 mt-2">120</p>
-                    </div>
-                </div>
-                
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-4">Grafik Keuangan (Contoh 7 Hari Terakhir)</h3>
-                    <div class="flex justify-center">
-                         <img src="https://quickchart.io/chart?c=%7Btype%3A%27bar%27%2Cdata%3A%7Blabels%3A%5B%27Sen%27%2C%27Sel%27%2C%27Rab%27%2C%27Kam%27%2C%27Jum%27%2C%27Sab%27%2C%27Min%27%5D%2Cdatasets%3A%5B%7Blabel%3A%27Pemasukan%27%2Cdata%3A%5B50%2C60%2C30%2C80%2C70%2C90%2C50%5D%2CbackgroundColor%3A%27rgba(59%2C130%2C246%2C0.8)%27%7D%2C%7Blabel%3A%27Pengeluaran%27%2Cdata%3A%5B20%2C10%2C15%2C30%2C25%2C10%2C40%5D%2CbackgroundColor%3A%27rgba(248%2C113%2C113%2C0.8)%27%7D%5D%7D%2Coptions%3A%7Blegend%3A%7Bdisplay%3Atrue%2Cposition%3A%27bottom%27%7D%2Cscales%3A%7ByAxes%3A%5B%7Bticks%3A%7BbeginAtZero%3Atrue%7D%7D%5D%7D%7D%7D" alt="Grafik Keuangan Mingguan">
-                    </div>
-                </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-sm font-medium text-gray-500">Produk Terlaris</h3>
+              <p class="text-3xl font-semibold text-gray-900 mt-2">
+                Kapal Selam
+              </p>
             </div>
-
-            <div id="page-sales" class="content-page">
-                <header class="flex justify-between items-center mb-8">
-                    <h2 class="text-3xl font-bold">Laporan Penjualan</h2>
-                    <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
-                </header>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-4">Ringkasan Penjualan per Produk (Bulan Ini)</h3>
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Produk</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Terjual (pcs)</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Total Pemasukan</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4">Pempek Kapal Selam</td>
-                                <td class="px-6 py-4">100</td>
-                                <td class="px-6 py-4 font-medium">Rp 1.500.000</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4">Pempek Kulit</td>
-                                <td class="px-6 py-4">300</td>
-                                <td class="px-6 py-4 font-medium">Rp 450.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-sm font-medium text-gray-500">
+                Total Transaksi (Bulan Ini)
+              </h3>
+              <p class="text-3xl font-semibold text-gray-900 mt-2">120</p>
             </div>
+          </div>
 
-            <div id="page-finance" class="content-page">
-                <header class="flex justify-between items-center mb-8">
-                    <h2 class="text-3xl font-bold">Laporan Keuangan</h2>
-                    <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
-                </header>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-4">Detail Laporan Keuangan</h3>
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tanggal</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Keterangan</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Pemasukan</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Pengeluaran</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Saldo</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4">2025-11-12</td>
-                                <td class="px-6 py-4">Penjualan Harian</td>
-                                <td class="px-6 py-4 text-green-600">+ Rp 500.000</td>
-                                <td class="px-6 py-4"></td>
-                                <td class="px-6 py-4 font-medium">Rp 4.500.000</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4">2025-11-12</td>
-                                <td class="px-6 py-4">Beli Stok Ikan</td>
-                                <td class="px-6 py-4"></td>
-                                <td class="px-6 py-4 text-red-600">- Rp 200.000</td>
-                                <td class="px-6 py-4 font-medium">Rp 4.300.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">
+              Grafik Keuangan (Contoh 7 Hari Terakhir)
+            </h3>
+            <div class="flex justify-center">
+              <img
+                src="https://quickchart.io/chart?c=%7Btype%3A%27bar%27%2Cdata%3A%7Blabels%3A%5B%27Sen%27%2C%27Sel%27%2C%27Rab%27%2C%27Kam%27%2C%27Jum%27%2C%27Sab%27%2C%27Min%27%5D%2Cdatasets%3A%5B%7Blabel%3A%27Pemasukan%27%2Cdata%3A%5B50%2C60%2C30%2C80%2C70%2C90%2C50%5D%2CbackgroundColor%3A%27rgba(59%2C130%2C246%2C0.8)%27%7D%2C%7Blabel%3A%27Pengeluaran%27%2Cdata%3A%5B20%2C10%2C15%2C30%2C25%2C10%2C40%5D%2CbackgroundColor%3A%27rgba(248%2C113%2C113%2C0.8)%27%7D%5D%7D%2Coptions%3A%7Blegend%3A%7Bdisplay%3Atrue%2Cposition%3A%27bottom%27%7D%2Cscales%3A%7ByAxes%3A%5B%7Bticks%3A%7BbeginAtZero%3Atrue%7D%7D%5D%7D%7D%7D"
+                alt="Grafik Keuangan Mingguan"
+              />
             </div>
+          </div>
+        </div>
 
-            <div id="page-stock" class="content-page">
-                <header class="flex justify-between items-center mb-8">
-                    <h2 class="text-3xl font-bold">Lihat Stok Produk</h2>
-                    <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
-                </header>
-                <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-4">Ringkasan Stok Saat Ini</h3>
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Produk</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stok</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Terakhir Diubah</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4">Pempek Kulit</td>
-                                <td class="px-6 py-4 font-bold">50</td>
-                                <td class="px-6 py-4 text-sm text-gray-500">2 jam lalu</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4">Pempek Kapal Selam</td>
-                                <td class="px-6 py-4 font-bold">30</td>
-                                <td class="px-6 py-4 text-sm text-gray-500">1 hari lalu</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div id="page-sales" class="content-page">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Laporan Penjualan</h2>
+            <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
+          </header>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">
+              Ringkasan Penjualan per Produk (Bulan Ini)
+            </h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Produk
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Terjual (pcs)
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Total Pemasukan
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4">Pempek Kapal Selam</td>
+                  <td class="px-6 py-4">100</td>
+                  <td class="px-6 py-4 font-medium">Rp 1.500.000</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4">Pempek Kulit</td>
+                  <td class="px-6 py-4">300</td>
+                  <td class="px-6 py-4 font-medium">Rp 450.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-        </main>
+        <div id="page-finance" class="content-page">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Laporan Keuangan</h2>
+            <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
+          </header>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">Detail Laporan Keuangan</h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Tanggal
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Keterangan
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Pemasukan
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Pengeluaran
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Saldo
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4">2025-11-12</td>
+                  <td class="px-6 py-4">Penjualan Harian</td>
+                  <td class="px-6 py-4 text-green-600">+ Rp 500.000</td>
+                  <td class="px-6 py-4"></td>
+                  <td class="px-6 py-4 font-medium">Rp 4.500.000</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4">2025-11-12</td>
+                  <td class="px-6 py-4">Beli Stok Ikan</td>
+                  <td class="px-6 py-4"></td>
+                  <td class="px-6 py-4 text-red-600">- Rp 200.000</td>
+                  <td class="px-6 py-4 font-medium">Rp 4.300.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="page-stock" class="content-page">
+          <header class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Lihat Stok Produk</h2>
+            <div class="text-sm font-medium">Pemilik Pempek Te'chi</div>
+          </header>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">Ringkasan Stok Saat Ini</h3>
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Produk
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Stok
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Terakhir Diubah
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4">Pempek Kulit</td>
+                  <td class="px-6 py-4 font-bold">50</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">2 jam lalu</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4">Pempek Kapal Selam</td>
+                  <td class="px-6 py-4 font-bold">30</td>
+                  <td class="px-6 py-4 text-sm text-gray-500">1 hari lalu</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
     </div>
 
     <script>
-        const navLinks = document.querySelectorAll('.nav-link');
-        const pages = document.querySelectorAll('.content-page');
-        
-        function setActiveLink(activeLink) {
-            navLinks.forEach(link => {
-                link.classList.remove('sidebar-active');
-                link.classList.add('hover:bg-gray-700');
-            });
-            activeLink.classList.add('sidebar-active');
-            activeLink.classList.remove('hover:bg-gray-700');
-        }
+      const navLinks = document.querySelectorAll(".nav-link");
+      const pages = document.querySelectorAll(".content-page");
 
-        function showPage(pageId) {
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById(pageId).classList.add('active');
-        }
+      function setActiveLink(activeLink) {
+        navLinks.forEach((link) => {
+          link.classList.remove("sidebar-active");
+          link.classList.add("hover:bg-gray-700");
+        });
+        activeLink.classList.add("sidebar-active");
+        activeLink.classList.remove("hover:bg-gray-700");
+      }
 
-        // Tambahkan event listener untuk setiap tombol
-        document.getElementById('btn-dashboard').addEventListener('click', (e) => {
-            e.preventDefault();
-            setActiveLink(e.currentTarget);
-            showPage('page-dashboard');
+      function showPage(pageId) {
+        pages.forEach((page) => {
+          page.classList.remove("active");
+        });
+        document.getElementById(pageId).classList.add("active");
+      }
+
+      // Tambahkan event listener untuk setiap tombol
+      document
+        .getElementById("btn-dashboard")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          setActiveLink(e.currentTarget);
+          showPage("page-dashboard");
         });
 
-        document.getElementById('btn-sales').addEventListener('click', (e) => {
-            e.preventDefault();
-            setActiveLink(e.currentTarget);
-            showPage('page-sales');
-        });
+      document.getElementById("btn-sales").addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveLink(e.currentTarget);
+        showPage("page-sales");
+      });
 
-        document.getElementById('btn-finance').addEventListener('click', (e) => {
-            e.preventDefault();
-            setActiveLink(e.currentTarget);
-            showPage('page-finance');
-        });
+      document.getElementById("btn-finance").addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveLink(e.currentTarget);
+        showPage("page-finance");
+      });
 
-        document.getElementById('btn-stock').addEventListener('click', (e) => {
-            e.preventDefault();
-            setActiveLink(e.currentTarget);
-            showPage('page-stock');
-        });
+      document.getElementById("btn-stock").addEventListener("click", (e) => {
+        e.preventDefault();
+        setActiveLink(e.currentTarget);
+        showPage("page-stock");
+      });
     </script>
-</body>
+  </body>
 </html>
